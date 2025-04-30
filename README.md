@@ -1,0 +1,1 @@
+# rubgy-predictor-application
