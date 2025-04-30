@@ -15,18 +15,8 @@ export default function RootLayout({
     children: React.ReactNode
   }) {
   return (
-    <html lang='eng'>
-      <body className={inter.className} >
-        <main className='px-2 md:px-16 md:py-2 text-textPrimary'>
-          {/*nav bar */}
-          <section className='flex space-x-4'>
-            {/*side bar */}
-            {children}
-            {/* other */}
+    <html lang='en'>
 
-          </section>
-        </main>
-        {children}</body>
     </html>
   )
 }
