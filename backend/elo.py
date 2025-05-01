@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd 
+import os
 
 eloRatings= {}
 history = {}
@@ -33,7 +34,13 @@ def updateElo(home, away, homeScore, awayScore):
             history[team] = []
         history[team].append(rating)
 
+def getHistroy():
+    return history
+
 def processMatchElo(df):
+    global eloRatings, history
+    eloRatings = {}
+    history = {}
 
     for _, row in df.iterrows():
         updateElo(
@@ -43,7 +50,7 @@ def processMatchElo(df):
             awayScore=row['AwayScore']
         )
         
-    return
+    return eloRatings
 
 def plotEloChange(teams=None):
 
@@ -64,8 +71,12 @@ def plotEloChange(teams=None):
     plt.grid(True)
     plt.tight_layout()
 
-    path = "elo_graph.png"
-    plt.savefig(path) 
+    #saving the graph image
+    static_dir = os.path.join(os.getcwd(), "static")
+    os.makedirs(static_dir, exist_ok=True)
+    path = os.path.join(static_dir, 'eloGraph.png')
+    plt.savefig(path)
+    
     plt.close()
     return path
 
