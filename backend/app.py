@@ -8,7 +8,7 @@ from elo import *
 
 app = FastAPI()
 
-matchResults = pd.read_csv('backend\data\matchResults2018-2025.csv')
+matchResults = pd.read_csv('matchResults2018-2025.csv')
 matchResults = matchResults[matchResults.columns.drop('rugbypassURL')]
 
 #set up next js access to api 
