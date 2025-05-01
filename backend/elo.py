@@ -1,5 +1,8 @@
+import matplotlib.pyplot as plt
+import pandas as pd 
 
 eloRatings= {}
+history = {}
 
 def getElo(team):
     return eloRatings.get(team, 1500)
@@ -25,7 +28,11 @@ def updateElo(home, away, homeScore, awayScore):
     eloRatings[home] = homeElo + K * (result - expectedResult)
     eloRatings[away] = awayElo + K * ((1 - result) - (1 - expectedResult))
     
-    
+    for team, rating in [(home, eloRatings[home]), (away, eloRatings[away])]:
+        if team not in history:
+            history[team] = []
+        history[team].append(rating)
+
 def processMatchElo(df):
 
     for _, row in df.iterrows():
@@ -36,13 +43,41 @@ def processMatchElo(df):
             awayScore=row['AwayScore']
         )
         
-    return eloRatings
+    return
 
+def plotEloChange(teams=None):
+
+
+    plt.figure(figsize=(12, 6))
+
+    if teams is None:
+        teams = list(history.keys())
+
+    for team in teams:
+        games = list(range(1, len(history[team]) + 1))
+        plt.plot(games, history[team], label = team)
+    
+    plt.xlabel('Games Played')
+    plt.ylabel('Elo Rating')
+    plt.title("Elo Rating across Games Played")
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+
+    path = "elo_graph.png"
+    plt.savefig(path) 
+    plt.close()
+    return path
 
 
 if __name__ == '__main__':
-    finalRatings = processMatchElo()
+
+    df = pd.read_csv('backend\data\matchResults2018-2025.csv')
+    df = df[df.columns.drop('rugbypassURL')]
+    finalRatings = processMatchElo(df)
 
     print("final elo ratings")
     for team, rating in sorted(finalRatings.items(), key=lambda x: -x[1]):
         print(f"{team} : {round(rating, 2)}")
+
+    plotEloChange()
