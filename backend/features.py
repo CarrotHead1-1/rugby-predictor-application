@@ -30,14 +30,18 @@ def features():
     df1 = getAllMatchData()
 
     df2 = getAllMatchResults()
-    pastMatches = df2[df2["Season"].isin(['18/19', '19/20', '20/21', '21/22', '22/23', '23/24', '24/25'])]
-    matches = pastMatches[pastMatches.columns.drop('rugbypassURL')]
+    #pastMatches = df2[df2["Season"].isin(['18/19', '19/20', '20/21', '21/22', '22/23', '23/24', '24/25'])]
+    matches = df2[df2.columns.drop('rugbypassURL')]
 
+    print(processMatchH2H(matches))
     #get elo from past seasons till season with data
     
-    eloRatings, h2h = processPastMatches(matches)
-    print(eloRatings)
-    print(h2h)
+    eloDf, h2hDf = processPastMatches(matches)
+    mergedDf = pd.concat([eloDf, h2hDf], axis=1)
+    final = mergedDf.loc[:, ~mergedDf.columns.duplicated()]
+
+    
+    print(final.head(100))
     return 
 
 

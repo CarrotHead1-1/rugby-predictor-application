@@ -42,15 +42,29 @@ def processMatchElo(df):
     eloRatings = {}
     history = {}
 
+    matchELo = []
+
     for _, row in df.iterrows():
+
+        homeElo = getElo(row["HomeTeam"])
+        awayElo = getElo(row["AwayTeam"])
+
+        matchELo.append({
+            "HomeTeam" : row["HomeTeam"],
+            "AwayTeam" : row["AwayTeam"],
+            "HomeElo" : homeElo,
+            "AwayElo" : awayElo,
+            "EloDiff" : homeElo - awayElo
+        })
+        
         updateElo(
             home=row['HomeTeam'],
             away=row['AwayTeam'],
             homeScore=row['HomeScore'],
             awayScore=row['AwayScore']
         )
-        
-    return eloRatings
+
+    return pd.DataFrame(matchELo)
 
 def plotEloChange(teams=None):
 
@@ -79,16 +93,3 @@ def plotEloChange(teams=None):
     
     plt.close()
     return path
-
-
-if __name__ == '__main__':
-
-    df = pd.read_csv('backend\data\matchResults2018-2025.csv')
-    df = df[df.columns.drop('rugbypassURL')]
-    finalRatings = processMatchElo(df)
-
-    print("final elo ratings")
-    for team, rating in sorted(finalRatings.items(), key=lambda x: -x[1]):
-        print(f"{team} : {round(rating, 2)}")
-
-    plotEloChange()

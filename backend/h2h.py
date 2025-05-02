@@ -1,4 +1,7 @@
 
+import pandas as pd
+
+
 h2h = {}
 
 def getH2H(teams):
@@ -26,17 +29,29 @@ def processMatchH2H(df):
     global h2h
     h2h = {}
 
+    matchH2H = []
+
     for _, row in df.iterrows():
+
+        teams = tuple(sorted([row["HomeTeam"], row["AwayTeam"]]))
+        currentH2H = getH2H(teams)
+        
+        matchH2H.append({
+            "HomeTeam" : row["HomeTeam"],
+            "AwayTeam" : row["AwayTeam"],
+            "Team_1"  : teams[0],
+            "Team_2" : teams[1],
+            "Team_1_wins" : currentH2H["Team_1_Wins"],
+            "Team_2_Wins" : currentH2H["Team_2_Wins"],
+            "Draws" : currentH2H["Draws"]
+
+        })
+
         updateH2H(
             home=row['HomeTeam'],
             away=row['AwayTeam'],
             homeScore=row['HomeScore'],
             awayScore=row['AwayScore']
         )
-    return h2h
 
-if __name__ == "__main__":
-    print(h2h)
-    results = processMatchH2H()
-    print(results)
-        
+    return pd.DataFrame(matchH2H)
