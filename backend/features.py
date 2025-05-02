@@ -12,7 +12,7 @@ def getAllMatchResults():
 
 def getAllMatchData():
     try:
-        return pd.read_csv('backend\datasets\premiershipMatchData22-25.csv')
+        return pd.read_csv('backend/data/premiershipMatchData22-25.csv')
     
     except FileNotFoundError:
         return None
@@ -32,16 +32,25 @@ def features():
     df2 = getAllMatchResults()
     #pastMatches = df2[df2["Season"].isin(['18/19', '19/20', '20/21', '21/22', '22/23', '23/24', '24/25'])]
     matches = df2[df2.columns.drop('rugbypassURL')]
-
-    print(processMatchH2H(matches))
+    #print(matches)
     #get elo from past seasons till season with data
     
     eloDf, h2hDf = processPastMatches(matches)
-    mergedDf = pd.concat([eloDf, h2hDf], axis=1)
+    #merges the eloDf, h2hDf, and matchResultsDf
+    mergedDf = pd.concat([matches, eloDf, h2hDf], axis=1)
     final = mergedDf.loc[:, ~mergedDf.columns.duplicated()]
 
-    
-    print(final.head(100))
+    #filter out seasons not in the matchDataDf
+    filtered = final[final['Season'].isin(['22/23', '23/24', '24/25'])]
+    filtered = filtered.reset_index(drop=True)
+    print(filtered)
+
+    featuresDf = df1.merge(filtered, how='right')
+    print(featuresDf)
+    featuresDf.to_csv('featuresDf.csv')
+    # print(df1)
+    # print(final)
+
     return 
 
 
