@@ -5,7 +5,7 @@ from h2h import *
 
 def getAllMatchResults():
     try:
-        return pd.read_csv('backend\datasets\matchResults2018-2025.csv')
+        return pd.read_csv('backend\data\matchResults2018-2025.csv')
          
     except FileNotFoundError:
         return None
@@ -30,11 +30,12 @@ def features():
     df1 = getAllMatchData()
 
     df2 = getAllMatchResults()
-    pastMatches = df2[df2["Season"].isin(['18/19', '19/20', '20/21', '21/22'])]
-    pastMatches = pastMatches[pastMatches.columns.drop('rugbypassURL')]
+    pastMatches = df2[df2["Season"].isin(['18/19', '19/20', '20/21', '21/22', '22/23', '23/24', '24/25'])]
+    matches = pastMatches[pastMatches.columns.drop('rugbypassURL')]
+
     #get elo from past seasons till season with data
     
-    eloRatings, h2h = processPastMatches(pastMatches)
+    eloRatings, h2h = processPastMatches(matches)
     print(eloRatings)
     print(h2h)
     return 

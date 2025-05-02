@@ -5,6 +5,7 @@ from fastapi.staticfiles import StaticFiles
 import os 
 import matplotlib.pyplot as plt
 import pandas as pd
+from h2h import *
 from elo import *
 
 app = FastAPI()
@@ -67,4 +68,11 @@ def getEloGraph():
     #return FileResponse(image_path, media_type="image/png")
 
 
+
 #get head to head results
+@app.get('/h2h')
+def getH2H():
+    processMatchH2H(df)
+    h2h = h2hResults()
+    #print(h2h)
+    return JSONResponse(content = {'h2h' : h2h})

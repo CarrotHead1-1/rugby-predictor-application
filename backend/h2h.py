@@ -17,8 +17,14 @@ def updateH2H(home, away, homeScore, awayScore):
         stats["Draws"] += 1
 
     h2h[teams] = stats
-    
+
+
+def h2hResults():
+    return {f"{team1} vs {team2}": stats for (team1, team2), stats in h2h.items()}
+
 def processMatchH2H(df):
+    global h2h
+    h2h = {}
 
     for _, row in df.iterrows():
         updateH2H(
