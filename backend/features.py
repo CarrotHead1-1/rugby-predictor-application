@@ -24,6 +24,14 @@ def processPastMatches(df):
 
     return eloRatings, h2h
 
+def getResult(row):
+    if row["HomeScore"] > row["AwayScore"]:
+        return "HomeWin"
+    elif row["AwayScore"] > row["HomeScore"]:
+        return "AwayWin"
+    else:
+        return "Draw"
+  
 def features():
 
     #get match data dataset
@@ -43,15 +51,19 @@ def features():
     #filter out seasons not in the matchDataDf
     filtered = final[final['Season'].isin(['22/23', '23/24', '24/25'])]
     filtered = filtered.reset_index(drop=True)
-    print(filtered)
+    #print(filtered)
 
-    featuresDf = df1.merge(filtered, how='right')
-    print(featuresDf)
-    featuresDf.to_csv('featuresDf.csv')
-    # print(df1)
-    # print(final)
+    featuresDf = df1.merge(
+        filtered, 
+        on = ["HomeTeam", "AwayTeam", "Season", "Round", "HomeScore", "AwayScore"],
+        how='right')
+    
+    featuresDf["Result"] = featuresDf.apply(getResult, axis = 1)
+    #print(featuresDf.head(10))
+    
 
-    return 
+
+    return featuresDf
 
 
 

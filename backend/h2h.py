@@ -41,7 +41,7 @@ def processMatchH2H(df):
             "AwayTeam" : row["AwayTeam"],
             "Team_1"  : teams[0],
             "Team_2" : teams[1],
-            "Team_1_wins" : currentH2H["Team_1_Wins"],
+            "Team_1_Wins" : currentH2H["Team_1_Wins"],
             "Team_2_Wins" : currentH2H["Team_2_Wins"],
             "Draws" : currentH2H["Draws"]
 
