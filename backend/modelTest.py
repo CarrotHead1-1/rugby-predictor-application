@@ -1,12 +1,16 @@
 
 import pandas as pd
+import os 
+import pickle
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import train_test_split
 from features import features
 from randomForest import RandomForest
 
 
-rf = RandomForest()
+rf = RandomForest(numTrees=10)
+
+#directory paths
 
 
 def datasetSetup():
@@ -18,7 +22,7 @@ def datasetSetup():
 
     X, y = selectFeatures(df)
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 42)
 
     #train the rf model
     rf.fit(X_train, y_train)
@@ -29,13 +33,28 @@ def datasetSetup():
     print("Accuracy", accuracy_score(y_test, y_pred))
     print("Classification Report: \n", classification_report(y_test, y_pred))
 
+    featureNames = df[df.columns.drop(['HomeTeam', 'AwayTeam', 'Season', 'Round','Team_1', 'Team_2', 'Result', 'Target'])]
+    importantFeatures = rf.importance()
+    linked = {featureNames.columns[i]: score for i, score in importantFeatures.items()}
+
+    for feature, score in sorted(linked.items(), key=lambda x: x[1], reverse=True):
+        print(f"{feature}: {score:.4f}")
+
+    static_dir = os.path.join(os.getcwd(), "static")
+    os.makedirs(static_dir, exist_ok=True)
+    picklePath = os.path.join(static_dir, "rf_model.pkl")
+
+    with open(picklePath, "wb") as f:
+        pickle.dump(rf, f)
 
 def removeMissing(df):
     return df.dropna()
 
 def selectFeatures(df):
     #print(df.columns)
-    features = df[["HomeElo", "AwayElo", "EloDiff", "Team_1_Wins", "Team_2_Wins", "Draws", "HomeTeamCoded", "AwayTeamCoded"]].values
+    #gets all the features in the dataset
+    features = df[df.columns.drop(['HomeTeam', 'AwayTeam', 'Season', 'Round','Team_1', 'Team_2', 'Result', 'Target'])].values
+    #print(features)
     label = df["Target"].values
 
     return features, label

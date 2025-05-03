@@ -33,3 +33,19 @@ class RandomForest:
         treePredictions = np.swapaxes(predictions, 0, 1)
         predictions = np.array([self.commonLabel(prediction) for prediction in treePredictions])
         return predictions
+    
+    def importance(self):
+        importance = {}
+
+        for tree in self.trees:
+            for feature, weight in tree.featureWeight.items():
+                if feature in importance:
+                    importance[feature] += weight
+                else:
+                    importance[feature] = weight
+        
+        total = sum(importance.values())
+        for feature in importance:
+            importance[feature] /= total
+        
+        return importance

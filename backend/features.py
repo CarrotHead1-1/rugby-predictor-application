@@ -32,18 +32,23 @@ def getResult(row):
     else:
         return "Draw"
   
-def features():
+def features(df1, df2):
 
     #get match data dataset
-    df1 = getAllMatchData()
+    # df1 = getAllMatchData()
 
-    df2 = getAllMatchResults()
+    # df2 = getAllMatchResults()
+    
     #pastMatches = df2[df2["Season"].isin(['18/19', '19/20', '20/21', '21/22', '22/23', '23/24', '24/25'])]
-    matches = df2[df2.columns.drop('rugbypassURL')]
+    try:
+        matches = df1[df1.columns.drop('rugbypassURL')]
+    except:
+        matches = df1
     #print(matches)
     #get elo from past seasons till season with data
     
     eloDf, h2hDf = processPastMatches(matches)
+
     #merges the eloDf, h2hDf, and matchResultsDf
     mergedDf = pd.concat([matches, eloDf, h2hDf], axis=1)
     final = mergedDf.loc[:, ~mergedDf.columns.duplicated()]
@@ -53,7 +58,7 @@ def features():
     filtered = filtered.reset_index(drop=True)
     #print(filtered)
 
-    featuresDf = df1.merge(
+    featuresDf = df2.merge(
         filtered, 
         on = ["HomeTeam", "AwayTeam", "Season", "Round", "HomeScore", "AwayScore"],
         how='right')

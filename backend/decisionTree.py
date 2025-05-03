@@ -21,6 +21,9 @@ class DecisionTree:
         self.numFeatures = numFeatures
         self.root = None
 
+        #gets the feature importance 
+        self.featureWeight = {}
+
     def fit(self, X, y):
 
         #if numFeatures is equal to None, use all features in X.shape[1]
@@ -37,7 +40,7 @@ class DecisionTree:
 
         #checks for the stopping criteria
         if depth >= self.maxDepth or labels == 1 or samples < self.minSamples:
-            leafVal = self.commonLabel(y)
+            leafVal = self.mostCommonLabel(y)
             #creates leaft node
             return Node(value=leafVal)
         
@@ -49,7 +52,7 @@ class DecisionTree:
 
         leftIndex, rightIndex = self.split(X[:, bestFeature], bestThreshold)
         left = self.growTree(X[leftIndex, :], y[leftIndex], depth + 1)
-        right = self.growTree(X[:, rightIndex], y[rightIndex], depth + 1)
+        right = self.growTree(X[rightIndex, :], y[rightIndex], depth + 1)
         return Node(bestFeature, bestThreshold, left, right)
     
      
@@ -69,6 +72,11 @@ class DecisionTree:
                     bestGain = gain
                     splitIndex = index
                     thresholdIndex = threshold
+
+                    if index in self.featureWeight:
+                        self.featureWeight[index] += gain
+                    else:
+                        self.featureWeight[index] = gain
                  
         return splitIndex, thresholdIndex
 
@@ -92,9 +100,6 @@ class DecisionTree:
         #calculate infomation gain
         return parentEntropy - childEntropy
         
-    
-         
-    
     def entropy(self, y):
         frequency = np.bincount(y)
         probabilities = frequency / len(y)
@@ -109,7 +114,7 @@ class DecisionTree:
     def mostCommonLabel(self, y):
         labels, counts = np.unique(y, return_counts = True)
         return labels[np.argmax(counts)]
-        return 
+         
     
     def predict(self, X):
         #returns np array of predictions
