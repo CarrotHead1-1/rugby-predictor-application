@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <main className=" md:py-2 text-textPrimary">
           <Navbar />
-          <section className="flex space-x-4">
+          <section className="flex space-x-4 justify-center">
 
             {children}
           </section>

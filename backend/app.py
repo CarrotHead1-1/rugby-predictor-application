@@ -85,6 +85,9 @@ def dataSetup(df):
     X, y = selectFeatures(df)
     return X, y
 
+def getFeatures(df1, df2):
+    return features(df1, df2)
+
 @app.get("/predictions")
 def getPredictions(home, away, season, round):
 
@@ -92,7 +95,7 @@ def getPredictions(home, away, season, round):
     predictionFile = os.path.join(STATIC_PATH, "predictions.json")
 
     if os.path.exists(predictionFile):
-        with open(predictionFile, "r"):
+        with open(predictionFile, "r") as f:
             predictions = json.load(f) 
     else:
         predictions = []
@@ -100,10 +103,10 @@ def getPredictions(home, away, season, round):
     #check for prediction
     for entry in predictions: 
         if (entry["HomeTeam"] == home and entry["AwayTeam"] == away and entry["Season"] == season and entry["Round"] == round):
-            return JSONResponse(content={"prediction": entry["prediction"]})
+            return JSONResponse(content={"prediction": entry["predictionText"]})
     
     #generate prediction
-    matchData = features(df, df2)
+    matchData = getFeatures(df, df2)
     
     #print(matchData)
     #find the coresponding game => home, away, season, round
@@ -120,25 +123,77 @@ def getPredictions(home, away, season, round):
     pred = model.predict(match_X)
     prediction = int(pred[0])
 
+    if prediction == 0:
+        predictionText = "AwayWin"
+    elif prediction == 2:
+        predictionText = "HomeWin"
+    else:
+        predictionText = "Draw"
+
     #add new prediction 
     newPrediction = {
         "HomeTeam" : home,
         "AwayTeam" : away,
         "Season" : season,
         "Round" : round,
-        "prediciton" : prediction
+        "prediciton" : prediction,
+        "predictionText" : predictionText
     }
 
     predictions.append(newPrediction)
     with open(predictionFile, "w") as f:
         json.dump(predictions, f, indent=4)
 
-        return JSONResponse(content = {"prediction" : prediction})
+        return JSONResponse(content = {"Prediction" : predictionText})
 
     
     #data = matchData.to_dict(orient="records")
     #return JSONResponse(content = {'data' : data})
 
+@app.get('/modelCount')
+def getModelCount():
+
+    predictionsFile = os.path.join(STATIC_PATH, "predictions.json")
+    
+    if not os.path.exists(predictionsFile):
+        return JSONResponse(content={"error" : "No predicitons found"})
+    
+    with open (predictionsFile, "r") as f:
+        predictions = json.load(f)
+
+    matchData = getFeatures(df, df2)
+    
+    correct = 0
+    incorrect = 0 
+
+    for entry in predictions:
+        home = entry["HomeTeam"]
+        away = entry["AwayTeam"]
+        season = entry["Season"]
+        round = entry["Round"]
+        predicted = entry["predictionText"]
+
+        fixture = matchData.loc[
+            (matchData["HomeTeam"] == home) 
+            & (matchData["AwayTeam"] == away) 
+            & (matchData["Season"] == season)
+            & (matchData["Round"] == round)]
+        
+        
+        
+        actual = fixture["Result"].values
+        print(predicted, actual)
+        if predicted == actual:
+            correct += 1
+        else:
+            incorrect += 1
+    
+    return JSONResponse(content = {
+        "CorrectPredictions" : correct,
+        "IncorrectPredictions" : incorrect,
+        "TotalPredictions" : correct + incorrect,
+        "Accuracy" : float(correct / (correct + incorrect)) * 100
+    })
 
 
 
