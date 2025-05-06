@@ -38,6 +38,9 @@ app.add_middleware(
 with open("static/rf_model.pkl", "rb") as f:
     model = pickle.load(f)
 
+with open("static/rf_accuracyReport.json") as f:
+    report = json.load(f)
+
 #get current season schedule
 @app.get('/seasons')
 def getSeasons():
@@ -84,7 +87,24 @@ def dataSetup(df):
 
 @app.get("/predictions")
 def getPredictions(home, away, season, round):
+
+    #check if the prediction exsists
+    predictionFile = os.path.join(STATIC_PATH, "predictions.json")
+
+    if os.path.exists(predictionFile):
+        with open(predictionFile, "r"):
+            predictions = json.load(f) 
+    else:
+        predictions = []
+
+    #check for prediction
+    for entry in predictions: 
+        if (entry["HomeTeam"] == home and entry["AwayTeam"] == away and entry["Season"] == season and entry["Round"] == round):
+            return JSONResponse(content={"prediction": entry["prediction"]})
+    
+    #generate prediction
     matchData = features(df, df2)
+    
     #print(matchData)
     #find the coresponding game => home, away, season, round
     fixture = matchData.loc[
@@ -92,13 +112,41 @@ def getPredictions(home, away, season, round):
         & (matchData["AwayTeam"] == away) 
         & (matchData["Season"] == season)
         & (matchData["Round"] == round)]
-    print(fixture)
+    
+    if fixture.empty:
+        return JSONResponse(content={"error" : "Match not found"})
+    
     match_X, _ = dataSetup(fixture)
-    print(match_X)
     pred = model.predict(match_X)
-    return JSONResponse(content = {"prediction" : pred.tolist()})
+    prediction = int(pred[0])
+
+    #add new prediction 
+    newPrediction = {
+        "HomeTeam" : home,
+        "AwayTeam" : away,
+        "Season" : season,
+        "Round" : round,
+        "prediciton" : prediction
+    }
+
+    predictions.append(newPrediction)
+    with open(predictionFile, "w") as f:
+        json.dump(predictions, f, indent=4)
+
+        return JSONResponse(content = {"prediction" : prediction})
+
+    
     #data = matchData.to_dict(orient="records")
     #return JSONResponse(content = {'data' : data})
+
+
+
+
+
+
+@app.get("/modelReport")
+def getModelReprt():
+    return report
 
 #get head to head results
 @app.get('/h2h')
