@@ -21,6 +21,9 @@ df = pd.read_csv(DATA_PATH)
 df = df[df.columns.drop('rugbypassURL')]
 
 df2 = pd.read_csv(os.path.join(BASE_PATH, "data", "premiershipMatchData22-25.csv"))
+
+featureDf = features(df, df2)
+
 #mount static files 
 app.mount("/static", StaticFiles(directory=STATIC_PATH), name="static")
 
@@ -56,6 +59,22 @@ def getMatches(season):
 
 #get elo 
 @app.get('/elo')
+def getElo(home, away, season, round):
+    match = featureDf.loc[
+        (featureDf["HomeTeam"] == home) 
+        & (featureDf["AwayTeam"] == away) 
+        & (featureDf["Season"] == season)
+        & (featureDf["Round"] == round)
+    ]
+
+    
+    return JSONResponse(content={
+        "homeElo" : int(match["HomeElo"].values[0]),
+        "awayElo" : int(match["AwayElo"].values[0]),
+        "eloDiff" : int(match["EloDiff"].values[0])
+    })
+
+@app.get('/eloGraph')
 def getEloGraph():
     processMatchElo(df)
    

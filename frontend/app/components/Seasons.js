@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import Matches from './Match';
+import MatchCard from './MatchCard';
 
 const Seasons = () => {
 
@@ -37,7 +38,7 @@ const Seasons = () => {
                 ))}
             </div>
             <div>
-                <Matches season={selectedSeason} />
+                <MatchCard season={selectedSeason} />
             </div>
         </div>
     )

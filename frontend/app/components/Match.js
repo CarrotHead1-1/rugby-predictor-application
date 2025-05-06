@@ -3,13 +3,28 @@ import React, { useEffect, useState } from 'react'
 
 const Matches = ({ season }) => {
     const [matches, setMatches] = useState([]);
+    const [elo, setElo] = useState([]);
+
 
     useEffect(() => {
 
         if (!season) return
 
-        fetch(`http://localhost:8000/matches?season=${season}`).then((res) => res.json().then((data) => setMatches(data.matches)))
-    }, [season])
+        fetch(`http://localhost:8000/matches?season=${season}`)
+            .then((res) => res.json().then((data) => setMatches(data.matches || [])))
+
+        matches.forEach((match) => {
+            fetch(`http://localhost:8000/elo/?home=${match.HomeTeam}&?away=${match.AwayTeam}
+                &?season=${season}&?round=${match.Round}`)
+                .then((res) => res.json())
+                .then((eloData) => {
+                    setElo(prev => ({
+                        ...prev,
+                        [`${match.HomeTeam}-${match.AwayTeam}-${match.Round}`]: eloData
+                    }))
+                })
+        })
+    }, [season]);
 
     return (
         <>
