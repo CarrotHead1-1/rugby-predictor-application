@@ -19,7 +19,7 @@ const Matches = ({ season }) => {
 
                         <p className='text-sm'> {match.HomeTeam}</p>
                     </div>
-                    <div className='px-2 m-auto flex justify-center items-center bg-slate-600 rounded-2xl'>
+                    <div className='px-2 m-auto flex justify-center items-center rounded-2xl'>
                         <p className='py-1 text-textPrimary text-xs'> {match.HomeScore} : {match.AwayScore} </p>
                     </div>
                     <div className='w-full flex items-center justify-end'>
