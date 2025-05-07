@@ -1,4 +1,33 @@
 {
-    "model accuracy": 0.8837209302325582,
-    "classification report": "              precision    recall  f1-score   support\n\n           0       0.82      0.82      0.82        28\n           2       0.91      0.91      0.91        58\n\n    accuracy                           0.88        86\n   macro avg       0.87      0.87      0.87        86\nweighted avg       0.88      0.88      0.88        86\n"
+    "modelAccuracy": 0.88,
+    "classificationReport": {
+        "AwayWin": {
+            "precision": 0.82,
+            "recall": 0.82,
+            "f1Score": 0.82,
+            "support": 28
+        },
+        "HomeWin": {
+            "precision": 0.91,
+            "recall": 0.91,
+            "f1Score": 0.91,
+            "support": 58
+        },
+        "accuracy": {
+            "f1Score": 0.88,
+            "support": 86
+        },
+        "macro_avg": {
+            "precision": 0.87,
+            "recall": 0.87,
+            "f1Score": 0.87,
+            "support": 86
+        },
+        "weighted_avg": {
+            "precision": 0.88,
+            "recall": 0.88,
+            "f1Score": 0.88,
+            "support": 86
+        }
+    }
 }

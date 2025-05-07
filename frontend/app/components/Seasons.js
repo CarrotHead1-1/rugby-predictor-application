@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react'
 import Matches from './Match';
-import MatchCard from './MatchCard';
 
 const Seasons = () => {
 
@@ -15,30 +14,30 @@ const Seasons = () => {
             .then((data) => {
                 setSeason(data.seasons);
                 if (data.seasons.length > 0) {
-                    setSelectedSeason([data.seasons.length - 1]);
+                    setSelectedSeason(data.seasons[data.seasons.length - 1]);
                 }
             })
     }, [])
 
     return (
-        <div>
-            <h2 className='text-lg font-semibold mb-2'> Season: </h2>
-            <div className='flex space-x-4 mb-2 md:mb-4'>
+        <div className='w-full max-w-4xl mx-auto px-4 py-6'>
+
+            <div className='flex flex-wrap gap-3 mb-6 border border-red-50 p-4'>
                 {seasons.map((season, index) => (
                     <button
                         key={index}
                         onClick={() => setSelectedSeason(season)}
                         className={`px-3 py-1 rounded ${selectedSeason === season
                             ? "bg-blue-400 text-white"
-                            : "bg-grey-200 text-black"}`}
+                            : "bg-gray-200 text-black"}`}
                     >
                         {season}
                     </button>
-
                 ))}
             </div>
-            <div>
-                <MatchCard season={selectedSeason} />
+
+            <div className='mt-4'>
+                <Matches season={selectedSeason} />
             </div>
         </div>
     )

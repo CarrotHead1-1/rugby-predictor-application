@@ -1,7 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import Matches from "./components/Match";
+
+import ModelPredictionCount from "./components/predictionCountCard";
+import ModelReportCard from "./components/modelReportCard";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,10 +20,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className=" md:py-2 text-textPrimary">
-          <Navbar />
-          <section className="flex space-x-4 justify-center">
 
+        <Navbar />
+
+        <main className="container mx-auto px-4 md:pz-8 py-4">
+
+          <section className="flex flex-col md:flex-row md:space-x-6 justify-center items-start">
             {children}
           </section>
         </main>

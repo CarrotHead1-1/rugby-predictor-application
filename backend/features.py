@@ -2,6 +2,9 @@ import pandas as pd
 from elo import *
 from h2h import *
 
+#global variables 
+
+
 
 def getAllMatchResults():
     try:
@@ -68,7 +71,7 @@ def features(df1, df2):
     
 
 
-    return featuresDf
+    return featuresDf, eloDf, h2hDf
 
 
 

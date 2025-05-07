@@ -17,12 +17,23 @@ app = FastAPI()
 BASE_PATH = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_PATH, "data", "matchResults2018-2025.csv")
 STATIC_PATH = os.path.join(BASE_PATH, "static")
+
+
 df = pd.read_csv(DATA_PATH)
 df = df[df.columns.drop('rugbypassURL')]
 
 df2 = pd.read_csv(os.path.join(BASE_PATH, "data", "premiershipMatchData22-25.csv"))
 
-featureDf = features(df, df2)
+featureDf,eloDf, h2hDf = features(df, df2)
+
+
+def mergeElo():
+    mergedDf = pd.concat([df, eloDf], axis=1)
+    mergedElo = mergedDf.loc[:, ~mergedDf.columns.duplicated()]
+    return(mergedElo)
+
+mergedElo = mergeElo()
+
 
 #mount static files 
 app.mount("/static", StaticFiles(directory=STATIC_PATH), name="static")
@@ -44,6 +55,12 @@ with open("static/rf_model.pkl", "rb") as f:
 with open("static/rf_accuracyReport.json") as f:
     report = json.load(f)
 
+try:
+    with open ('/static/model_predictions.json') as f:
+        modelPredictions = json.load(f)
+except:
+    modelPredictions = {}
+
 #get current season schedule
 @app.get('/seasons')
 def getSeasons():
@@ -60,18 +77,17 @@ def getMatches(season):
 #get elo 
 @app.get('/elo')
 def getElo(home, away, season, round):
-    match = featureDf.loc[
-        (featureDf["HomeTeam"] == home) 
-        & (featureDf["AwayTeam"] == away) 
-        & (featureDf["Season"] == season)
-        & (featureDf["Round"] == round)
-    ]
 
-    
+    match = mergedElo.loc[
+        (mergedElo["HomeTeam"] == home) 
+        & (mergedElo["AwayTeam"] == away) 
+        & (mergedElo["Season"] == season)
+        & (mergedElo["Round"] == round)]
+
     return JSONResponse(content={
-        "homeElo" : int(match["HomeElo"].values[0]),
-        "awayElo" : int(match["AwayElo"].values[0]),
-        "eloDiff" : int(match["EloDiff"].values[0])
+        "homeElo" : int(match["HomeElo"].values),
+        "awayElo" : int(match["AwayElo"].values),
+        "eloDiff" : int(match["EloDiff"].values)
     })
 
 @app.get('/eloGraph')
@@ -95,7 +111,6 @@ def getEloGraph():
     }
 
     return JSONResponse(content = response)
-    #return FileResponse(image_path, media_type="image/png")
 
 def dataSetup(df):
     df = encodeValues(df)
@@ -109,35 +124,27 @@ def getFeatures(df1, df2):
 
 @app.get("/predictions")
 def getPredictions(home, away, season, round):
-
-    #check if the prediction exsists
-    predictionFile = os.path.join(STATIC_PATH, "predictions.json")
-
-    if os.path.exists(predictionFile):
-        with open(predictionFile, "r") as f:
-            predictions = json.load(f) 
-    else:
-        predictions = []
-
-    #check for prediction
-    for entry in predictions: 
-        if (entry["HomeTeam"] == home and entry["AwayTeam"] == away and entry["Season"] == season and entry["Round"] == round):
-            return JSONResponse(content={"prediction": entry["predictionText"]})
+    #check for season 
+    if (season == '18/19' or 
+        season =='19/20' or 
+        season == '20/21' or 
+        season == '21/22'):
+        return None
     
-    #generate prediction
-    matchData = getFeatures(df, df2)
+    #create key 
+    key = f"{home}-{away}-{season}-{round}"
+    if modelPredictions:
+        if key in modelPredictions:
+            return JSONResponse(content={"prediction" : modelPredictions[key]})
     
-    #print(matchData)
-    #find the coresponding game => home, away, season, round
+    matchData, _, _ = getFeatures(df, df2)
+
     fixture = matchData.loc[
         (matchData["HomeTeam"] == home) 
         & (matchData["AwayTeam"] == away) 
         & (matchData["Season"] == season)
         & (matchData["Round"] == round)]
-    
-    if fixture.empty:
-        return JSONResponse(content={"error" : "Match not found"})
-    
+
     match_X, _ = dataSetup(fixture)
     pred = model.predict(match_X)
     prediction = int(pred[0])
@@ -149,74 +156,50 @@ def getPredictions(home, away, season, round):
     else:
         predictionText = "Draw"
 
-    #add new prediction 
-    newPrediction = {
-        "HomeTeam" : home,
-        "AwayTeam" : away,
-        "Season" : season,
-        "Round" : round,
-        "prediciton" : prediction,
-        "predictionText" : predictionText
-    }
+    #add new prediction to storedPredictions
+    modelPredictions[key] = [home, away, season, round, predictionText]
 
-    predictions.append(newPrediction)
-    with open(predictionFile, "w") as f:
-        json.dump(predictions, f, indent=4)
+    #store new predictions
+    with open("static/model_predictions.json", "w") as f:
+        json.dump(modelPredictions, f, indent=4)
 
-        return JSONResponse(content = {"Prediction" : predictionText})
-
-    
-    #data = matchData.to_dict(orient="records")
-    #return JSONResponse(content = {'data' : data})
+    return JSONResponse(content={"prediction" : modelPredictions[key]})
 
 @app.get('/modelCount')
 def getModelCount():
 
-    predictionsFile = os.path.join(STATIC_PATH, "predictions.json")
-    
-    if not os.path.exists(predictionsFile):
-        return JSONResponse(content={"error" : "No predicitons found"})
-    
-    with open (predictionsFile, "r") as f:
-        predictions = json.load(f)
-
-    matchData = getFeatures(df, df2)
-    
+    #set up counters
     correct = 0
-    incorrect = 0 
+    incorrect = 0
 
-    for entry in predictions:
-        home = entry["HomeTeam"]
-        away = entry["AwayTeam"]
-        season = entry["Season"]
-        round = entry["Round"]
-        predicted = entry["predictionText"]
+    for key, prediction in modelPredictions.items():
+        home,away,season,round_, predictedResult = prediction
 
-        fixture = matchData.loc[
-            (matchData["HomeTeam"] == home) 
-            & (matchData["AwayTeam"] == away) 
-            & (matchData["Season"] == season)
-            & (matchData["Round"] == round)]
+        #search for fixture
+        actual = featureDf.loc[
+            (featureDf["HomeTeam"] == home) &
+            (featureDf["AwayTeam"] == away) &
+            (featureDf["Season"] == season) &
+            (featureDf["Round"] == round_),
+            "Result"
+        ]
+
+        #create comparison key
+        comparison = f"{home}-{away}-{season}-{round_}"
+        if key == comparison:
+            if predictedResult == actual.iloc[0]:
+                correct += 1
+            else:
+                incorrect += 1 
         
-        
-        
-        actual = fixture["Result"].values
-        print(predicted, actual)
-        if predicted == actual:
-            correct += 1
-        else:
-            incorrect += 1
-    
-    return JSONResponse(content = {
-        "CorrectPredictions" : correct,
-        "IncorrectPredictions" : incorrect,
-        "TotalPredictions" : correct + incorrect,
-        "Accuracy" : float(correct / (correct + incorrect)) * 100
+    total = correct + incorrect
+
+    return JSONResponse(content={
+        "correctPredictions" : correct,
+        "incorrectPredictions" : incorrect,
+        "totalPredictions" : total,
+        "Accuracy" : round((correct / total) * 100, 2) if total > 0 else 0.0 
     })
-
-
-
-
 
 @app.get("/modelReport")
 def getModelReprt():

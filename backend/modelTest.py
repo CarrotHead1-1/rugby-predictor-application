@@ -25,7 +25,7 @@ rf = RandomForest(numTrees=10, maxDepth=10, minSamples=2)
 
 def datasetSetup():
 
-    df = features(df1, df2)
+    df, _, _ = features(df1, df2)
     
     df = encodeValues(df)
     df = removeMissing(df)  
@@ -41,14 +41,14 @@ def datasetSetup():
     y_pred = rf.predict(X_test)
 
     print("Accuracy", accuracy_score(y_test, y_pred))
-    print("Classification Report: \n", classification_report(y_test, y_pred))
+    print("Classification Report: \n", classification_report(y_test, y_pred, output_dict=True))
 
     modelAccuracy = accuracy_score(y_test, y_pred)
     modelReport = classification_report(y_test, y_pred)
 
     accuracyReport = {
-        "model accuracy": modelAccuracy,
-        "classification report": modelReport
+        "modelAccuracy": modelAccuracy,
+        "classificationReport": modelReport
     }
     #featureNames = df[df.columns.drop(['HomeTeam', 'AwayTeam', 'Season', 'Round','Team_1', 'Team_2', 'Result', 'Target'])]
     # importantFeatures = rf.importance()
