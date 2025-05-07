@@ -39,13 +39,13 @@ const Matches = ({ season }) => {
             ) : (
                 matches.map((match) => {
                     const matchKey = `${match.HomeTeam}-${match.AwayTeam}-${match.Round}`;
-                    const matchElo = elo[matchKey]; // Grab the elo data for this match
+                    const matchElo = elo[matchKey];
 
                     return (
                         <MatchCard
                             key={matchKey}
                             match={match}
-                            elo={matchElo} // Pass the match-specific elo data
+                            elo={matchElo}
                         />
                     );
                 })

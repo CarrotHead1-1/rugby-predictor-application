@@ -1,10 +1,7 @@
+
 import pandas as pd
 from elo import *
 from h2h import *
-
-#global variables 
-
-
 
 def getAllMatchResults():
     try:
@@ -36,18 +33,11 @@ def getResult(row):
         return "Draw"
   
 def features(df1, df2):
-
-    #get match data dataset
-    # df1 = getAllMatchData()
-
-    # df2 = getAllMatchResults()
-    
-    #pastMatches = df2[df2["Season"].isin(['18/19', '19/20', '20/21', '21/22', '22/23', '23/24', '24/25'])]
     try:
         matches = df1[df1.columns.drop('rugbypassURL')]
     except:
         matches = df1
-    #print(matches)
+
     #get elo from past seasons till season with data
     
     eloDf, h2hDf = processPastMatches(matches)
@@ -67,10 +57,6 @@ def features(df1, df2):
         how='right')
     
     featuresDf["Result"] = featuresDf.apply(getResult, axis = 1)
-    #print(featuresDf.head(10))
-    
-
-
     return featuresDf, eloDf, h2hDf
 
 

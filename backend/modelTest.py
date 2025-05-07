@@ -19,10 +19,6 @@ df2 = pd.read_csv(os.path.join(BASE_PATH, "data", "premiershipMatchData22-25.csv
 
 rf = RandomForest(numTrees=10, maxDepth=10, minSamples=2)
 
-
-#directory paths
-
-
 def datasetSetup():
 
     df, _, _ = features(df1, df2)
@@ -50,12 +46,6 @@ def datasetSetup():
         "modelAccuracy": modelAccuracy,
         "classificationReport": modelReport
     }
-    #featureNames = df[df.columns.drop(['HomeTeam', 'AwayTeam', 'Season', 'Round','Team_1', 'Team_2', 'Result', 'Target'])]
-    # importantFeatures = rf.importance()
-    # linked = {featureNames.columns[i]: score for i, score in importantFeatures.items()}
-
-    # for feature, score in sorted(linked.items(), key=lambda x: x[1], reverse=True):
-    #     print(f"{feature}: {score:.4f}")
 
     static_dir = os.path.join(os.getcwd(), "static")
     os.makedirs(static_dir, exist_ok=True)
@@ -71,28 +61,30 @@ def removeMissing(df):
     return df.dropna()
 
 def selectFeatures(df):
-    #print(df.columns)
+    
     #gets all the features in the dataset
     features = df[df.columns.drop(['HomeTeam', 'AwayTeam', 'Season', 'Round','Team_1', 'Team_2', 'Result', 'Target'])].values
-    #groups of featurs
-    setPiece = ["Home Scrums", "Away Scrums", "Home Scrum Wins", "Away Scrum Wins", "Home Lineouts" ,"Away Lineouts", "Home Lineout Wins %", "Away Lineout Wins %", "Home Restarts Received", "Away Restarts Received", "Home Maul Success", "Away Mail Sucess"]
-    discipline = ["Home Penalties Conceded", "Away Penalties Conceded", "Home Yellow Cards", "Away Yellow Cards", "Home Red Cards", "Away Red Cards"]
-    tackles = ["Home Tackles Made", "Away Tackles Made", "Home Dominate Tackles", "Away Dominate Tackles", "Home Tackles Missed", "Away Tackles Missed", "Home Tackle Completion", "Away Tackle Completion"]
-    rucks = ["Home 0-3s Ruck Speed","Away 0-3s Ruck Speed","Home 3-6s Ruck Speed","Away 3-6s Ruck Speed","Home 6s+ Ruck Speed", "Away 6s+ Ruck Speed", "Home Rucks Won", "Away Rucks Won"]
-    attck = ["Home Tries", "Away Tries", "Home Conversions","Away Conversions", "Home Line Breaks", "Away Line Breaks","Home Metres Gained", "Away Metres Gained", "Home Carries", "Away Carries", "Home Post Contact Metres", "Away Post Contact Metres"
-             , "Home 22m Entries", "Home 22m Conversions", "Away 22m Entries", "Away 22m Conversions"]
-    territoyAndPocession = ["Territory Home Try-Line - 22m","Territory Home 22m - 50m","Territory Away 22m - 50m","Territory Away Try-Line - 22m","Home Territory","Away Territory",
-                            "Home Possessions Try Line - 22m","Home Possession 22m - 50m","Home Possession opp 50m - 22m", "Home Possession opp 22m - Try Line",
-                            "Away Possessions Try Line - 22m","Away Possession 22m - 50m","Away Possession opp 50m - 22m", "Away Possession opp 22m - Try Line"]
-    
-    defence = ["Home Turnovers Won", "Away Turnovers Won", "Home Tackle Turnovers", "Away Tackle Turnovers", "Home Offloads Allowed", "Away Offloads Allowed"]
-    kicking = ["Home Kicks", "Away Kicks", "Home Drop Goals", "Away Drop Goals", "Home Penalty Goals", "Away Penalty Goals"]
-    selected = attck + defence + tackles + kicking
-    #features = df[selected].values
-    #print(features)
     label = df["Target"].values
 
     return features, label
+
+
+
+    #groups of features - used in testing
+    # setPiece = ["Home Scrums", "Away Scrums", "Home Scrum Wins", "Away Scrum Wins", "Home Lineouts" ,"Away Lineouts", "Home Lineout Wins %", "Away Lineout Wins %", "Home Restarts Received", "Away Restarts Received", "Home Maul Success", "Away Mail Sucess"]
+    # discipline = ["Home Penalties Conceded", "Away Penalties Conceded", "Home Yellow Cards", "Away Yellow Cards", "Home Red Cards", "Away Red Cards"]
+    # tackles = ["Home Tackles Made", "Away Tackles Made", "Home Dominate Tackles", "Away Dominate Tackles", "Home Tackles Missed", "Away Tackles Missed", "Home Tackle Completion", "Away Tackle Completion"]
+    # rucks = ["Home 0-3s Ruck Speed","Away 0-3s Ruck Speed","Home 3-6s Ruck Speed","Away 3-6s Ruck Speed","Home 6s+ Ruck Speed", "Away 6s+ Ruck Speed", "Home Rucks Won", "Away Rucks Won"]
+    # attck = ["Home Tries", "Away Tries", "Home Conversions","Away Conversions", "Home Line Breaks", "Away Line Breaks","Home Metres Gained", "Away Metres Gained", "Home Carries", "Away Carries", "Home Post Contact Metres", "Away Post Contact Metres"
+    #          , "Home 22m Entries", "Home 22m Conversions", "Away 22m Entries", "Away 22m Conversions"]
+    # territoyAndPocession = ["Territory Home Try-Line - 22m","Territory Home 22m - 50m","Territory Away 22m - 50m","Territory Away Try-Line - 22m","Home Territory","Away Territory",
+    #                         "Home Possessions Try Line - 22m","Home Possession 22m - 50m","Home Possession opp 50m - 22m", "Home Possession opp 22m - Try Line",
+    #                         "Away Possessions Try Line - 22m","Away Possession 22m - 50m","Away Possession opp 50m - 22m", "Away Possession opp 22m - Try Line"]
+    # defence = ["Home Turnovers Won", "Away Turnovers Won", "Home Tackle Turnovers", "Away Tackle Turnovers", "Home Offloads Allowed", "Away Offloads Allowed"]
+    # kicking = ["Home Kicks", "Away Kicks", "Home Drop Goals", "Away Drop Goals", "Home Penalty Goals", "Away Penalty Goals"]
+    # selected = attck + defence + tackles + kicking
+    #features = df[selected].values
+    #print(features)
 
 def encodeValues(df):
     #encode features such as team names and result

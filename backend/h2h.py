@@ -1,7 +1,6 @@
 
 import pandas as pd
 
-
 h2h = {}
 
 def getH2H(teams):
