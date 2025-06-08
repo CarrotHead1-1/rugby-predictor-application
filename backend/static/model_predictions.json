@@ -13,13 +13,6 @@
         "1",
         "AwayWin"
     ],
-    "bath-northampton-24/25-1": [
-        "bath",
-        "northampton",
-        "24/25",
-        "1",
-        "HomeWin"
-    ],
     "exeter-chiefs-leicester-24/25-1": [
         "exeter-chiefs",
         "leicester",
@@ -27,12 +20,12 @@
         "1",
         "AwayWin"
     ],
-    "newcastle-bristol-24/25-1": [
-        "newcastle",
-        "bristol",
+    "bath-northampton-24/25-1": [
+        "bath",
+        "northampton",
         "24/25",
         "1",
-        "AwayWin"
+        "HomeWin"
     ],
     "leicester-bath-24/25-2": [
         "leicester",
@@ -41,13 +34,6 @@
         "2",
         "AwayWin"
     ],
-    "northampton-exeter-chiefs-24/25-2": [
-        "northampton",
-        "exeter-chiefs",
-        "24/25",
-        "2",
-        "HomeWin"
-    ],
     "saracens-sale-24/25-2": [
         "saracens",
         "sale",
@@ -55,9 +41,16 @@
         "2",
         "HomeWin"
     ],
-    "harlequins-newcastle-24/25-2": [
-        "harlequins",
+    "newcastle-bristol-24/25-1": [
         "newcastle",
+        "bristol",
+        "24/25",
+        "1",
+        "AwayWin"
+    ],
+    "northampton-exeter-chiefs-24/25-2": [
+        "northampton",
+        "exeter-chiefs",
         "24/25",
         "2",
         "HomeWin"
@@ -69,6 +62,20 @@
         "2",
         "HomeWin"
     ],
+    "harlequins-newcastle-24/25-2": [
+        "harlequins",
+        "newcastle",
+        "24/25",
+        "2",
+        "HomeWin"
+    ],
+    "saracens-exeter-chiefs-24/25-3": [
+        "saracens",
+        "exeter-chiefs",
+        "24/25",
+        "3",
+        "HomeWin"
+    ],
     "newcastle-leicester-24/25-3": [
         "newcastle",
         "leicester",
@@ -76,9 +83,16 @@
         "3",
         "AwayWin"
     ],
-    "saracens-exeter-chiefs-24/25-3": [
-        "saracens",
-        "exeter-chiefs",
+    "sale-gloucester-24/25-3": [
+        "sale",
+        "gloucester",
+        "24/25",
+        "3",
+        "HomeWin"
+    ],
+    "northampton-harlequins-24/25-3": [
+        "northampton",
+        "harlequins",
         "24/25",
         "3",
         "HomeWin"
@@ -90,13 +104,6 @@
         "3",
         "AwayWin"
     ],
-    "northampton-harlequins-24/25-3": [
-        "northampton",
-        "harlequins",
-        "24/25",
-        "3",
-        "HomeWin"
-    ],
     "leicester-northampton-24/25-4": [
         "leicester",
         "northampton",
@@ -104,11 +111,11 @@
         "4",
         "HomeWin"
     ],
-    "sale-gloucester-24/25-3": [
-        "sale",
-        "gloucester",
+    "harlequins-saracens-24/25-4": [
+        "harlequins",
+        "saracens",
         "24/25",
-        "3",
+        "4",
         "HomeWin"
     ],
     "gloucester-bath-24/25-4": [
@@ -118,13 +125,6 @@
         "4",
         "AwayWin"
     ],
-    "harlequins-saracens-24/25-4": [
-        "harlequins",
-        "saracens",
-        "24/25",
-        "4",
-        "HomeWin"
-    ],
     "exeter-chiefs-bristol-24/25-4": [
         "exeter-chiefs",
         "bristol",
@@ -132,19 +132,12 @@
         "4",
         "AwayWin"
     ],
-    "sale-newcastle-24/25-4": [
-        "sale",
-        "newcastle",
-        "24/25",
-        "4",
-        "HomeWin"
-    ],
-    "newcastle-exeter-chiefs-24/25-5": [
-        "newcastle",
-        "exeter-chiefs",
+    "bristol-saracens-24/25-5": [
+        "bristol",
+        "saracens",
         "24/25",
         "5",
-        "HomeWin"
+        "AwayWin"
     ],
     "harlequins-bath-24/25-5": [
         "harlequins",
@@ -160,16 +153,23 @@
         "5",
         "HomeWin"
     ],
-    "bristol-saracens-24/25-5": [
-        "bristol",
-        "saracens",
+    "sale-newcastle-24/25-4": [
+        "sale",
+        "newcastle",
         "24/25",
-        "5",
-        "AwayWin"
+        "4",
+        "HomeWin"
     ],
     "northampton-sale-24/25-5": [
         "northampton",
         "sale",
+        "24/25",
+        "5",
+        "HomeWin"
+    ],
+    "newcastle-exeter-chiefs-24/25-5": [
+        "newcastle",
+        "exeter-chiefs",
         "24/25",
         "5",
         "HomeWin"
@@ -202,26 +202,12 @@
         "6",
         "HomeWin"
     ],
-    "bristol-northampton-24/25-6": [
-        "bristol",
-        "northampton",
-        "24/25",
-        "6",
-        "HomeWin"
-    ],
     "sale-leicester-24/25-7": [
         "sale",
         "leicester",
         "24/25",
         "7",
         "HomeWin"
-    ],
-    "northampton-gloucester-24/25-7": [
-        "northampton",
-        "gloucester",
-        "24/25",
-        "7",
-        "AwayWin"
     ],
     "bath-exeter-chiefs-24/25-7": [
         "bath",
@@ -230,11 +216,11 @@
         "7",
         "HomeWin"
     ],
-    "saracens-northampton-24/25-8": [
+    "newcastle-saracens-24/25-7": [
+        "newcastle",
         "saracens",
-        "northampton",
         "24/25",
-        "8",
+        "7",
         "HomeWin"
     ],
     "harlequins-bristol-24/25-7": [
@@ -244,11 +230,25 @@
         "7",
         "AwayWin"
     ],
-    "newcastle-saracens-24/25-7": [
-        "newcastle",
-        "saracens",
+    "bristol-northampton-24/25-6": [
+        "bristol",
+        "northampton",
+        "24/25",
+        "6",
+        "HomeWin"
+    ],
+    "northampton-gloucester-24/25-7": [
+        "northampton",
+        "gloucester",
         "24/25",
         "7",
+        "AwayWin"
+    ],
+    "saracens-northampton-24/25-8": [
+        "saracens",
+        "northampton",
+        "24/25",
+        "8",
         "HomeWin"
     ],
     "sale-exeter-chiefs-24/25-8": [
@@ -256,6 +256,13 @@
         "exeter-chiefs",
         "24/25",
         "8",
+        "HomeWin"
+    ],
+    "exeter-chiefs-gloucester-24/25-9": [
+        "exeter-chiefs",
+        "gloucester",
+        "24/25",
+        "9",
         "HomeWin"
     ],
     "newcastle-bath-24/25-8": [
@@ -272,26 +279,12 @@
         "8",
         "AwayWin"
     ],
-    "harlequins-leicester-24/25-9": [
-        "harlequins",
-        "leicester",
-        "24/25",
-        "9",
-        "Draw"
-    ],
     "leicester-bristol-24/25-8": [
         "leicester",
         "bristol",
         "24/25",
         "8",
         "AwayWin"
-    ],
-    "exeter-chiefs-gloucester-24/25-9": [
-        "exeter-chiefs",
-        "gloucester",
-        "24/25",
-        "9",
-        "HomeWin"
     ],
     "northampton-bath-24/25-10": [
         "northampton",
@@ -306,6 +299,13 @@
         "24/25",
         "9",
         "HomeWin"
+    ],
+    "harlequins-leicester-24/25-9": [
+        "harlequins",
+        "leicester",
+        "24/25",
+        "9",
+        "Draw"
     ],
     "northampton-newcastle-24/25-9": [
         "northampton",
@@ -328,11 +328,25 @@
         "10",
         "HomeWin"
     ],
+    "newcastle-harlequins-24/25-10": [
+        "newcastle",
+        "harlequins",
+        "24/25",
+        "10",
+        "AwayWin"
+    ],
     "leicester-exeter-chiefs-24/25-10": [
         "leicester",
         "exeter-chiefs",
         "24/25",
         "10",
+        "HomeWin"
+    ],
+    "bristol-newcastle-24/25-11": [
+        "bristol",
+        "newcastle",
+        "24/25",
+        "11",
         "HomeWin"
     ],
     "gloucester-sale-24/25-10": [
@@ -349,20 +363,6 @@
         "11",
         "AwayWin"
     ],
-    "newcastle-harlequins-24/25-10": [
-        "newcastle",
-        "harlequins",
-        "24/25",
-        "10",
-        "AwayWin"
-    ],
-    "bristol-newcastle-24/25-11": [
-        "bristol",
-        "newcastle",
-        "24/25",
-        "11",
-        "HomeWin"
-    ],
     "exeter-chiefs-saracens-24/25-11": [
         "exeter-chiefs",
         "saracens",
@@ -376,34 +376,6 @@
         "24/25",
         "11",
         "HomeWin"
-    ],
-    "harlequins-northampton-24/25-11": [
-        "harlequins",
-        "northampton",
-        "24/25",
-        "11",
-        "HomeWin"
-    ],
-    "bristol-exeter-chiefs-24/25-12": [
-        "bristol",
-        "exeter-chiefs",
-        "24/25",
-        "12",
-        "HomeWin"
-    ],
-    "bath-gloucester-24/25-12": [
-        "bath",
-        "gloucester",
-        "24/25",
-        "12",
-        "HomeWin"
-    ],
-    "northampton-leicester-24/25-12": [
-        "northampton",
-        "leicester",
-        "24/25",
-        "12",
-        "AwayWin"
     ],
     "newcastle-sale-24/25-12": [
         "newcastle",
@@ -419,6 +391,41 @@
         "12",
         "AwayWin"
     ],
+    "bath-gloucester-24/25-12": [
+        "bath",
+        "gloucester",
+        "24/25",
+        "12",
+        "HomeWin"
+    ],
+    "bristol-exeter-chiefs-24/25-12": [
+        "bristol",
+        "exeter-chiefs",
+        "24/25",
+        "12",
+        "HomeWin"
+    ],
+    "harlequins-northampton-24/25-11": [
+        "harlequins",
+        "northampton",
+        "24/25",
+        "11",
+        "HomeWin"
+    ],
+    "northampton-leicester-24/25-12": [
+        "northampton",
+        "leicester",
+        "24/25",
+        "12",
+        "AwayWin"
+    ],
+    "gloucester-bristol-24/25-13": [
+        "gloucester",
+        "bristol",
+        "24/25",
+        "13",
+        "HomeWin"
+    ],
     "leicester-saracens-24/25-13": [
         "leicester",
         "saracens",
@@ -433,16 +440,16 @@
         "13",
         "HomeWin"
     ],
-    "bath-harlequins-24/25-13": [
-        "bath",
-        "harlequins",
+    "sale-northampton-24/25-13": [
+        "sale",
+        "northampton",
         "24/25",
         "13",
         "HomeWin"
     ],
-    "gloucester-bristol-24/25-13": [
-        "gloucester",
-        "bristol",
+    "bath-harlequins-24/25-13": [
+        "bath",
+        "harlequins",
         "24/25",
         "13",
         "HomeWin"
@@ -454,11 +461,11 @@
         "14",
         "AwayWin"
     ],
-    "sale-northampton-24/25-13": [
-        "sale",
-        "northampton",
+    "saracens-gloucester-24/25-14": [
+        "saracens",
+        "gloucester",
         "24/25",
-        "13",
+        "14",
         "HomeWin"
     ],
     "harlequins-sale-24/25-14": [
@@ -468,12 +475,12 @@
         "14",
         "AwayWin"
     ],
-    "saracens-gloucester-24/25-14": [
-        "saracens",
-        "gloucester",
+    "newcastle-northampton-24/25-14": [
+        "newcastle",
+        "northampton",
         "24/25",
         "14",
-        "HomeWin"
+        "AwayWin"
     ],
     "bath-newcastle-24/25-15": [
         "bath",
@@ -485,13 +492,6 @@
     "sale-saracens-24/25-15": [
         "sale",
         "saracens",
-        "24/25",
-        "15",
-        "HomeWin"
-    ],
-    "northampton-bristol-24/25-15": [
-        "northampton",
-        "bristol",
         "24/25",
         "15",
         "HomeWin"
@@ -510,6 +510,13 @@
         "15",
         "HomeWin"
     ],
+    "northampton-bristol-24/25-15": [
+        "northampton",
+        "bristol",
+        "24/25",
+        "15",
+        "HomeWin"
+    ],
     "exeter-chiefs-bath-24/25-14": [
         "exeter-chiefs",
         "bath",
@@ -517,11 +524,1481 @@
         "14",
         "AwayWin"
     ],
-    "newcastle-northampton-24/25-14": [
+    "sale-northampton-23/24-1": [
+        "sale",
+        "northampton",
+        "23/24",
+        "1",
+        "HomeWin"
+    ],
+    "gloucester-harlequins-23/24-1": [
+        "gloucester",
+        "harlequins",
+        "23/24",
+        "1",
+        "AwayWin"
+    ],
+    "bath-newcastle-23/24-1": [
+        "bath",
+        "newcastle",
+        "23/24",
+        "1",
+        "HomeWin"
+    ],
+    "exeter-chiefs-saracens-23/24-1": [
+        "exeter-chiefs",
+        "saracens",
+        "23/24",
+        "1",
+        "HomeWin"
+    ],
+    "bristol-leicester-23/24-1": [
+        "bristol",
+        "leicester",
+        "23/24",
+        "1",
+        "HomeWin"
+    ],
+    "harlequins-exeter-chiefs-23/24-2": [
+        "harlequins",
+        "exeter-chiefs",
+        "23/24",
+        "2",
+        "HomeWin"
+    ],
+    "leicester-sale-23/24-2": [
+        "leicester",
+        "sale",
+        "23/24",
+        "2",
+        "AwayWin"
+    ],
+    "newcastle-gloucester-23/24-2": [
+        "newcastle",
+        "gloucester",
+        "23/24",
+        "2",
+        "AwayWin"
+    ],
+    "newcastle-northampton-23/24-3": [
         "newcastle",
         "northampton",
-        "24/25",
+        "23/24",
+        "3",
+        "AwayWin"
+    ],
+    "bath-leicester-23/24-3": [
+        "bath",
+        "leicester",
+        "23/24",
+        "3",
+        "AwayWin"
+    ],
+    "saracens-bath-23/24-2": [
+        "saracens",
+        "bath",
+        "23/24",
+        "2",
+        "AwayWin"
+    ],
+    "saracens-northampton-23/24-8": [
+        "saracens",
+        "northampton",
+        "23/24",
+        "8",
+        "AwayWin"
+    ],
+    "exeter-chiefs-sale-23/24-3": [
+        "exeter-chiefs",
+        "sale",
+        "23/24",
+        "3",
+        "HomeWin"
+    ],
+    "exeter-chiefs-bristol-23/24-4": [
+        "exeter-chiefs",
+        "bristol",
+        "23/24",
+        "4",
+        "HomeWin"
+    ],
+    "saracens-leicester-23/24-4": [
+        "saracens",
+        "leicester",
+        "23/24",
+        "4",
+        "HomeWin"
+    ],
+    "harlequins-newcastle-23/24-4": [
+        "harlequins",
+        "newcastle",
+        "23/24",
+        "4",
+        "HomeWin"
+    ],
+    "northampton-bath-23/24-4": [
+        "northampton",
+        "bath",
+        "23/24",
+        "4",
+        "HomeWin"
+    ],
+    "sale-gloucester-23/24-4": [
+        "sale",
+        "gloucester",
+        "23/24",
+        "4",
+        "HomeWin"
+    ],
+    "newcastle-saracens-23/24-5": [
+        "newcastle",
+        "saracens",
+        "23/24",
+        "5",
+        "AwayWin"
+    ],
+    "leicester-harlequins-23/24-5": [
+        "leicester",
+        "harlequins",
+        "23/24",
+        "5",
+        "AwayWin"
+    ],
+    "bristol-sale-23/24-5": [
+        "bristol",
+        "sale",
+        "23/24",
+        "5",
+        "AwayWin"
+    ],
+    "northampton-exeter-chiefs-23/24-5": [
+        "northampton",
+        "exeter-chiefs",
+        "23/24",
+        "5",
+        "HomeWin"
+    ],
+    "harlequins-saracens-23/24-6": [
+        "harlequins",
+        "saracens",
+        "23/24",
+        "6",
+        "AwayWin"
+    ],
+    "gloucester-bath-23/24-5": [
+        "gloucester",
+        "bath",
+        "23/24",
+        "5",
+        "AwayWin"
+    ],
+    "exeter-chiefs-gloucester-23/24-6": [
+        "exeter-chiefs",
+        "gloucester",
+        "23/24",
+        "6",
+        "AwayWin"
+    ],
+    "leicester-northampton-23/24-6": [
+        "leicester",
+        "northampton",
+        "23/24",
+        "6",
+        "HomeWin"
+    ],
+    "sale-newcastle-23/24-6": [
+        "sale",
+        "newcastle",
+        "23/24",
+        "6",
+        "HomeWin"
+    ],
+    "gloucester-leicester-23/24-7": [
+        "gloucester",
+        "leicester",
+        "23/24",
+        "7",
+        "AwayWin"
+    ],
+    "saracens-bristol-23/24-7": [
+        "saracens",
+        "bristol",
+        "23/24",
+        "7",
+        "HomeWin"
+    ],
+    "newcastle-exeter-chiefs-23/24-7": [
+        "newcastle",
+        "exeter-chiefs",
+        "23/24",
+        "7",
+        "AwayWin"
+    ],
+    "bath-bristol-23/24-6": [
+        "bath",
+        "bristol",
+        "23/24",
+        "6",
+        "AwayWin"
+    ],
+    "northampton-harlequins-23/24-7": [
+        "northampton",
+        "harlequins",
+        "23/24",
+        "7",
+        "HomeWin"
+    ],
+    "sale-bath-23/24-7": [
+        "sale",
+        "bath",
+        "23/24",
+        "7",
+        "HomeWin"
+    ],
+    "leicester-newcastle-23/24-8": [
+        "leicester",
+        "newcastle",
+        "23/24",
+        "8",
+        "HomeWin"
+    ],
+    "bristol-gloucester-23/24-8": [
+        "bristol",
+        "gloucester",
+        "23/24",
+        "8",
+        "HomeWin"
+    ],
+    "bath-harlequins-23/24-9": [
+        "bath",
+        "harlequins",
+        "23/24",
+        "9",
+        "HomeWin"
+    ],
+    "harlequins-sale-23/24-8": [
+        "harlequins",
+        "sale",
+        "23/24",
+        "8",
+        "HomeWin"
+    ],
+    "exeter-chiefs-leicester-23/24-9": [
+        "exeter-chiefs",
+        "leicester",
+        "23/24",
+        "9",
+        "HomeWin"
+    ],
+    "gloucester-northampton-23/24-9": [
+        "gloucester",
+        "northampton",
+        "23/24",
+        "9",
+        "AwayWin"
+    ],
+    "newcastle-bristol-23/24-9": [
+        "newcastle",
+        "bristol",
+        "23/24",
+        "9",
+        "AwayWin"
+    ],
+    "sale-saracens-23/24-9": [
+        "sale",
+        "saracens",
+        "23/24",
+        "9",
+        "HomeWin"
+    ],
+    "leicester-bath-23/24-10": [
+        "leicester",
+        "bath",
+        "23/24",
+        "10",
+        "HomeWin"
+    ],
+    "northampton-sale-23/24-10": [
+        "northampton",
+        "sale",
+        "23/24",
+        "10",
+        "HomeWin"
+    ],
+    "harlequins-gloucester-23/24-10": [
+        "harlequins",
+        "gloucester",
+        "23/24",
+        "10",
+        "HomeWin"
+    ],
+    "saracens-newcastle-23/24-10": [
+        "saracens",
+        "newcastle",
+        "23/24",
+        "10",
+        "HomeWin"
+    ],
+    "sale-bristol-23/24-11": [
+        "sale",
+        "bristol",
+        "23/24",
+        "11",
+        "AwayWin"
+    ],
+    "leicester-saracens-23/24-11": [
+        "leicester",
+        "saracens",
+        "23/24",
+        "11",
+        "HomeWin"
+    ],
+    "bristol-exeter-chiefs-23/24-10": [
+        "bristol",
+        "exeter-chiefs",
+        "23/24",
+        "10",
+        "AwayWin"
+    ],
+    "exeter-chiefs-northampton-23/24-11": [
+        "exeter-chiefs",
+        "northampton",
+        "23/24",
+        "11",
+        "AwayWin"
+    ],
+    "newcastle-harlequins-23/24-11": [
+        "newcastle",
+        "harlequins",
+        "23/24",
+        "11",
+        "AwayWin"
+    ],
+    "gloucester-sale-23/24-12": [
+        "gloucester",
+        "sale",
+        "23/24",
+        "12",
+        "HomeWin"
+    ],
+    "bath-sale-23/24-13": [
+        "bath",
+        "sale",
+        "23/24",
+        "13",
+        "HomeWin"
+    ],
+    "saracens-harlequins-23/24-13": [
+        "saracens",
+        "harlequins",
+        "23/24",
+        "13",
+        "HomeWin"
+    ],
+    "exeter-chiefs-newcastle-23/24-13": [
+        "exeter-chiefs",
+        "newcastle",
+        "23/24",
+        "13",
+        "HomeWin"
+    ],
+    "bristol-northampton-23/24-13": [
+        "bristol",
+        "northampton",
+        "23/24",
+        "13",
+        "HomeWin"
+    ],
+    "gloucester-bristol-23/24-14": [
+        "gloucester",
+        "bristol",
+        "23/24",
         "14",
+        "AwayWin"
+    ],
+    "leicester-gloucester-23/24-13": [
+        "leicester",
+        "gloucester",
+        "23/24",
+        "13",
+        "AwayWin"
+    ],
+    "sale-exeter-chiefs-23/24-14": [
+        "sale",
+        "exeter-chiefs",
+        "23/24",
+        "14",
+        "HomeWin"
+    ],
+    "harlequins-bath-23/24-14": [
+        "harlequins",
+        "bath",
+        "23/24",
+        "14",
+        "HomeWin"
+    ],
+    "newcastle-leicester-23/24-14": [
+        "newcastle",
+        "leicester",
+        "23/24",
+        "14",
+        "AwayWin"
+    ],
+    "sale-harlequins-23/24-15": [
+        "sale",
+        "harlequins",
+        "23/24",
+        "15",
+        "HomeWin"
+    ],
+    "bristol-newcastle-23/24-15": [
+        "bristol",
+        "newcastle",
+        "23/24",
+        "15",
+        "HomeWin"
+    ],
+    "northampton-saracens-23/24-14": [
+        "northampton",
+        "saracens",
+        "23/24",
+        "14",
+        "HomeWin"
+    ],
+    "northampton-leicester-23/24-15": [
+        "northampton",
+        "leicester",
+        "23/24",
+        "15",
+        "HomeWin"
+    ],
+    "exeter-chiefs-bath-23/24-15": [
+        "exeter-chiefs",
+        "bath",
+        "23/24",
+        "15",
+        "AwayWin"
+    ],
+    "saracens-gloucester-23/24-15": [
+        "saracens",
+        "gloucester",
+        "23/24",
+        "15",
+        "HomeWin"
+    ],
+    "bath-saracens-23/24-16": [
+        "bath",
+        "saracens",
+        "23/24",
+        "16",
+        "AwayWin"
+    ],
+    "leicester-bristol-23/24-16": [
+        "leicester",
+        "bristol",
+        "23/24",
+        "16",
+        "HomeWin"
+    ],
+    "exeter-chiefs-harlequins-23/24-17": [
+        "exeter-chiefs",
+        "harlequins",
+        "23/24",
+        "17",
+        "HomeWin"
+    ],
+    "newcastle-bath-23/24-17": [
+        "newcastle",
+        "bath",
+        "23/24",
+        "17",
+        "AwayWin"
+    ],
+    "bristol-saracens-23/24-17": [
+        "bristol",
+        "saracens",
+        "23/24",
+        "17",
+        "AwayWin"
+    ],
+    "northampton-gloucester-23/24-17": [
+        "northampton",
+        "gloucester",
+        "23/24",
+        "17",
+        "HomeWin"
+    ],
+    "bath-northampton-23/24-18": [
+        "bath",
+        "northampton",
+        "23/24",
+        "18",
+        "HomeWin"
+    ],
+    "sale-leicester-23/24-17": [
+        "sale",
+        "leicester",
+        "23/24",
+        "17",
+        "HomeWin"
+    ],
+    "gloucester-newcastle-23/24-18": [
+        "gloucester",
+        "newcastle",
+        "23/24",
+        "18",
+        "HomeWin"
+    ],
+    "harlequins-bristol-23/24-18": [
+        "harlequins",
+        "bristol",
+        "23/24",
+        "18",
+        "AwayWin"
+    ],
+    "bath-sale-23/24-SF": [
+        "bath",
+        "sale",
+        "23/24",
+        "SF",
+        "HomeWin"
+    ],
+    "saracens-sale-23/24-18": [
+        "saracens",
+        "sale",
+        "23/24",
+        "18",
+        "AwayWin"
+    ],
+    "northampton-bath-23/24-F": [
+        "northampton",
+        "bath",
+        "23/24",
+        "F",
+        "HomeWin"
+    ],
+    "northampton-bristol-23/24-2": [
+        "northampton",
+        "bristol",
+        "23/24",
+        "2",
+        "AwayWin"
+    ],
+    "bristol-harlequins-23/24-3": [
+        "bristol",
+        "harlequins",
+        "23/24",
+        "3",
+        "AwayWin"
+    ],
+    "gloucester-saracens-23/24-3": [
+        "gloucester",
+        "saracens",
+        "23/24",
+        "3",
+        "AwayWin"
+    ],
+    "bath-exeter-chiefs-23/24-8": [
+        "bath",
+        "exeter-chiefs",
+        "23/24",
+        "8",
+        "HomeWin"
+    ],
+    "bath-gloucester-23/24-11": [
+        "bath",
+        "gloucester",
+        "23/24",
+        "11",
+        "HomeWin"
+    ],
+    "saracens-exeter-chiefs-23/24-12": [
+        "saracens",
+        "exeter-chiefs",
+        "23/24",
+        "12",
+        "HomeWin"
+    ],
+    "bristol-bath-23/24-12": [
+        "bristol",
+        "bath",
+        "23/24",
+        "12",
+        "HomeWin"
+    ],
+    "northampton-newcastle-23/24-12": [
+        "northampton",
+        "newcastle",
+        "23/24",
+        "12",
+        "HomeWin"
+    ],
+    "harlequins-leicester-23/24-12": [
+        "harlequins",
+        "leicester",
+        "23/24",
+        "12",
+        "HomeWin"
+    ],
+    "gloucester-exeter-chiefs-23/24-16": [
+        "gloucester",
+        "exeter-chiefs",
+        "23/24",
+        "16",
+        "AwayWin"
+    ],
+    "newcastle-sale-23/24-16": [
+        "newcastle",
+        "sale",
+        "23/24",
+        "16",
+        "AwayWin"
+    ],
+    "harlequins-northampton-23/24-16": [
+        "harlequins",
+        "northampton",
+        "23/24",
+        "16",
+        "HomeWin"
+    ],
+    "northampton-saracens-23/24-SF": [
+        "northampton",
+        "saracens",
+        "23/24",
+        "SF",
+        "HomeWin"
+    ],
+    "leicester-exeter-chiefs-23/24-18": [
+        "leicester",
+        "exeter-chiefs",
+        "23/24",
+        "18",
+        "HomeWin"
+    ],
+    "gloucester-wasps-22/23-1": [
+        "gloucester",
+        "wasps",
+        "22/23",
+        "1",
+        "HomeWin"
+    ],
+    "newcastle-harlequins-22/23-1": [
+        "newcastle",
+        "harlequins",
+        "22/23",
+        "1",
+        "AwayWin"
+    ],
+    "london-irish-worcester-22/23-1": [
+        "london-irish",
+        "worcester",
+        "22/23",
+        "1",
+        "HomeWin"
+    ],
+    "exeter-chiefs-leicester-22/23-1": [
+        "exeter-chiefs",
+        "leicester",
+        "22/23",
+        "1",
+        "HomeWin"
+    ],
+    "leicester-newcastle-22/23-2": [
+        "leicester",
+        "newcastle",
+        "22/23",
+        "2",
+        "HomeWin"
+    ],
+    "northampton-london-irish-22/23-2": [
+        "northampton",
+        "london-irish",
+        "22/23",
+        "2",
+        "HomeWin"
+    ],
+    "harlequins-saracens-22/23-2": [
+        "harlequins",
+        "saracens",
+        "22/23",
+        "2",
+        "AwayWin"
+    ],
+    "exeter-chiefs-harlequins-22/23-3": [
+        "exeter-chiefs",
+        "harlequins",
+        "22/23",
+        "3",
+        "HomeWin"
+    ],
+    "northampton-leicester-22/23-3": [
+        "northampton",
+        "leicester",
+        "22/23",
+        "3",
+        "AwayWin"
+    ],
+    "bristol-london-irish-22/23-3": [
+        "bristol",
+        "london-irish",
+        "22/23",
+        "3",
+        "HomeWin"
+    ],
+    "saracens-gloucester-22/23-3": [
+        "saracens",
+        "gloucester",
+        "22/23",
+        "3",
+        "HomeWin"
+    ],
+    "bath-wasps-22/23-3": [
+        "bath",
+        "wasps",
+        "22/23",
+        "3",
+        "HomeWin"
+    ],
+    "worcester-newcastle-22/23-3": [
+        "worcester",
+        "newcastle",
+        "22/23",
+        "3",
+        "HomeWin"
+    ],
+    "harlequins-northampton-22/23-4": [
+        "harlequins",
+        "northampton",
+        "22/23",
+        "4",
+        "HomeWin"
+    ],
+    "london-irish-bath-22/23-4": [
+        "london-irish",
+        "bath",
+        "22/23",
+        "4",
+        "HomeWin"
+    ],
+    "sale-exeter-chiefs-22/23-4": [
+        "sale",
+        "exeter-chiefs",
+        "22/23",
+        "4",
+        "HomeWin"
+    ],
+    "wasps-northampton-22/23-5": [
+        "wasps",
+        "northampton",
+        "22/23",
+        "5",
+        "HomeWin"
+    ],
+    "newcastle-saracens-22/23-5": [
+        "newcastle",
+        "saracens",
+        "22/23",
+        "5",
+        "AwayWin"
+    ],
+    "leicester-sale-22/23-5": [
+        "leicester",
+        "sale",
+        "22/23",
+        "5",
+        "AwayWin"
+    ],
+    "bath-gloucester-22/23-5": [
+        "bath",
+        "gloucester",
+        "22/23",
+        "5",
+        "AwayWin"
+    ],
+    "bristol-exeter-chiefs-22/23-5": [
+        "bristol",
+        "exeter-chiefs",
+        "22/23",
+        "5",
+        "AwayWin"
+    ],
+    "harlequins-leicester-22/23-6": [
+        "harlequins",
+        "leicester",
+        "22/23",
+        "6",
+        "AwayWin"
+    ],
+    "bath-northampton-22/23-7": [
+        "bath",
+        "northampton",
+        "22/23",
+        "7",
+        "HomeWin"
+    ],
+    "sale-harlequins-22/23-7": [
+        "sale",
+        "harlequins",
+        "22/23",
+        "7",
+        "AwayWin"
+    ],
+    "saracens-bath-22/23-6": [
+        "saracens",
+        "bath",
+        "22/23",
+        "6",
+        "HomeWin"
+    ],
+    "exeter-chiefs-saracens-22/23-7": [
+        "exeter-chiefs",
+        "saracens",
+        "22/23",
+        "7",
+        "AwayWin"
+    ],
+    "london-irish-gloucester-22/23-7": [
+        "london-irish",
+        "gloucester",
+        "22/23",
+        "7",
+        "AwayWin"
+    ],
+    "saracens-sale-22/23-8": [
+        "saracens",
+        "sale",
+        "22/23",
+        "8",
+        "HomeWin"
+    ],
+    "gloucester-exeter-chiefs-22/23-8": [
+        "gloucester",
+        "exeter-chiefs",
+        "22/23",
+        "8",
+        "HomeWin"
+    ],
+    "newcastle-bath-22/23-9": [
+        "newcastle",
+        "bath",
+        "22/23",
+        "9",
+        "AwayWin"
+    ],
+    "northampton-bristol-22/23-8": [
+        "northampton",
+        "bristol",
+        "22/23",
+        "8",
+        "HomeWin"
+    ],
+    "sale-gloucester-22/23-9": [
+        "sale",
+        "gloucester",
+        "22/23",
+        "9",
+        "HomeWin"
+    ],
+    "saracens-northampton-22/23-10": [
+        "saracens",
+        "northampton",
+        "22/23",
+        "10",
+        "HomeWin"
+    ],
+    "northampton-exeter-chiefs-22/23-9": [
+        "northampton",
+        "exeter-chiefs",
+        "22/23",
+        "9",
+        "HomeWin"
+    ],
+    "exeter-chiefs-london-irish-22/23-10": [
+        "exeter-chiefs",
+        "london-irish",
+        "22/23",
+        "10",
+        "HomeWin"
+    ],
+    "gloucester-newcastle-22/23-10": [
+        "gloucester",
+        "newcastle",
+        "22/23",
+        "10",
+        "AwayWin"
+    ],
+    "sale-bristol-22/23-11": [
+        "sale",
+        "bristol",
+        "22/23",
+        "11",
+        "HomeWin"
+    ],
+    "harlequins-gloucester-22/23-11": [
+        "harlequins",
+        "gloucester",
+        "22/23",
+        "11",
+        "HomeWin"
+    ],
+    "leicester-london-irish-22/23-11": [
+        "leicester",
+        "london-irish",
+        "22/23",
+        "11",
+        "HomeWin"
+    ],
+    "newcastle-exeter-chiefs-22/23-11": [
+        "newcastle",
+        "exeter-chiefs",
+        "22/23",
+        "11",
+        "HomeWin"
+    ],
+    "harlequins-bristol-22/23-13": [
+        "harlequins",
+        "bristol",
+        "22/23",
+        "13",
+        "AwayWin"
+    ],
+    "bath-harlequins-22/23-12": [
+        "bath",
+        "harlequins",
+        "22/23",
+        "12",
+        "AwayWin"
+    ],
+    "gloucester-northampton-22/23-12": [
+        "gloucester",
+        "northampton",
+        "22/23",
+        "12",
+        "HomeWin"
+    ],
+    "exeter-chiefs-bath-22/23-13": [
+        "exeter-chiefs",
+        "bath",
+        "22/23",
+        "13",
+        "HomeWin"
+    ],
+    "leicester-gloucester-22/23-13": [
+        "leicester",
+        "gloucester",
+        "22/23",
+        "13",
+        "HomeWin"
+    ],
+    "london-irish-saracens-22/23-13": [
+        "london-irish",
+        "saracens",
+        "22/23",
+        "13",
+        "HomeWin"
+    ],
+    "sale-leicester-22/23-14": [
+        "sale",
+        "leicester",
+        "22/23",
+        "14",
+        "HomeWin"
+    ],
+    "gloucester-london-irish-22/23-14": [
+        "gloucester",
+        "london-irish",
+        "22/23",
+        "14",
+        "HomeWin"
+    ],
+    "newcastle-sale-22/23-13": [
+        "newcastle",
+        "sale",
+        "22/23",
+        "13",
+        "HomeWin"
+    ],
+    "harlequins-sale-22/23-15": [
+        "harlequins",
+        "sale",
+        "22/23",
+        "15",
+        "AwayWin"
+    ],
+    "london-irish-bristol-22/23-15": [
+        "london-irish",
+        "bristol",
+        "22/23",
+        "15",
+        "HomeWin"
+    ],
+    "exeter-chiefs-northampton-22/23-15": [
+        "exeter-chiefs",
+        "northampton",
+        "22/23",
+        "15",
+        "HomeWin"
+    ],
+    "newcastle-leicester-22/23-15": [
+        "newcastle",
+        "leicester",
+        "22/23",
+        "15",
+        "HomeWin"
+    ],
+    "saracens-bristol-22/23-16": [
+        "saracens",
+        "bristol",
+        "22/23",
+        "16",
+        "HomeWin"
+    ],
+    "leicester-saracens-22/23-17": [
+        "leicester",
+        "saracens",
+        "22/23",
+        "17",
+        "HomeWin"
+    ],
+    "leicester-northampton-22/23-16": [
+        "leicester",
+        "northampton",
+        "22/23",
+        "16",
+        "AwayWin"
+    ],
+    "london-irish-harlequins-22/23-16": [
+        "london-irish",
+        "harlequins",
+        "22/23",
+        "16",
+        "HomeWin"
+    ],
+    "sale-bath-22/23-16": [
+        "sale",
+        "bath",
+        "22/23",
+        "16",
+        "HomeWin"
+    ],
+    "northampton-sale-22/23-17": [
+        "northampton",
+        "sale",
+        "22/23",
+        "17",
+        "HomeWin"
+    ],
+    "exeter-chiefs-sale-22/23-18": [
+        "exeter-chiefs",
+        "sale",
+        "22/23",
+        "18",
+        "HomeWin"
+    ],
+    "london-irish-leicester-22/23-18": [
+        "london-irish",
+        "leicester",
+        "22/23",
+        "18",
+        "AwayWin"
+    ],
+    "saracens-newcastle-22/23-18": [
+        "saracens",
+        "newcastle",
+        "22/23",
+        "18",
+        "HomeWin"
+    ],
+    "bath-bristol-22/23-18": [
+        "bath",
+        "bristol",
+        "22/23",
+        "18",
+        "AwayWin"
+    ],
+    "northampton-gloucester-22/23-18": [
+        "northampton",
+        "gloucester",
+        "22/23",
+        "18",
+        "HomeWin"
+    ],
+    "newcastle-london-irish-22/23-19": [
+        "newcastle",
+        "london-irish",
+        "22/23",
+        "19",
+        "AwayWin"
+    ],
+    "sale-saracens-22/23-19": [
+        "sale",
+        "saracens",
+        "22/23",
+        "19",
+        "HomeWin"
+    ],
+    "bristol-harlequins-22/23-20": [
+        "bristol",
+        "harlequins",
+        "22/23",
+        "20",
+        "HomeWin"
+    ],
+    "london-irish-sale-22/23-20": [
+        "london-irish",
+        "sale",
+        "22/23",
+        "20",
+        "HomeWin"
+    ],
+    "gloucester-leicester-22/23-20": [
+        "gloucester",
+        "leicester",
+        "22/23",
+        "20",
+        "AwayWin"
+    ],
+    "exeter-chiefs-newcastle-22/23-20": [
+        "exeter-chiefs",
+        "newcastle",
+        "22/23",
+        "20",
+        "HomeWin"
+    ],
+    "northampton-bath-22/23-20": [
+        "northampton",
+        "bath",
+        "22/23",
+        "20",
+        "HomeWin"
+    ],
+    "bath-exeter-chiefs-22/23-21": [
+        "bath",
+        "exeter-chiefs",
+        "22/23",
+        "21",
+        "HomeWin"
+    ],
+    "newcastle-gloucester-22/23-21": [
+        "newcastle",
+        "gloucester",
+        "22/23",
+        "21",
+        "HomeWin"
+    ],
+    "harlequins-newcastle-22/23-22": [
+        "harlequins",
+        "newcastle",
+        "22/23",
+        "22",
+        "HomeWin"
+    ],
+    "northampton-saracens-22/23-22": [
+        "northampton",
+        "saracens",
+        "22/23",
+        "22",
+        "HomeWin"
+    ],
+    "saracens-london-irish-22/23-23": [
+        "saracens",
+        "london-irish",
+        "22/23",
+        "23",
+        "HomeWin"
+    ],
+    "bristol-sale-22/23-22": [
+        "bristol",
+        "sale",
+        "22/23",
+        "22",
+        "AwayWin"
+    ],
+    "gloucester-bath-22/23-22": [
+        "gloucester",
+        "bath",
+        "22/23",
+        "22",
+        "AwayWin"
+    ],
+    "gloucester-sale-22/23-23": [
+        "gloucester",
+        "sale",
+        "22/23",
+        "23",
+        "AwayWin"
+    ],
+    "exeter-chiefs-bristol-22/23-23": [
+        "exeter-chiefs",
+        "bristol",
+        "22/23",
+        "23",
+        "HomeWin"
+    ],
+    "bath-saracens-22/23-24": [
+        "bath",
+        "saracens",
+        "22/23",
+        "24",
+        "HomeWin"
+    ],
+    "bristol-gloucester-22/23-24": [
+        "bristol",
+        "gloucester",
+        "22/23",
+        "24",
+        "HomeWin"
+    ],
+    "london-irish-exeter-chiefs-22/23-24": [
+        "london-irish",
+        "exeter-chiefs",
+        "22/23",
+        "24",
+        "HomeWin"
+    ],
+    "sale-newcastle-22/23-24": [
+        "sale",
+        "newcastle",
+        "22/23",
+        "24",
+        "HomeWin"
+    ],
+    "saracens-northampton-22/23-SF": [
+        "saracens",
+        "northampton",
+        "22/23",
+        "SF",
+        "HomeWin"
+    ],
+    "sale-leicester-22/23-SF": [
+        "sale",
+        "leicester",
+        "22/23",
+        "SF",
+        "HomeWin"
+    ],
+    "saracens-sale-22/23-F": [
+        "saracens",
+        "sale",
+        "22/23",
+        "F",
+        "HomeWin"
+    ],
+    "bath-sale-22/23-2": [
+        "bath",
+        "sale",
+        "22/23",
+        "2",
+        "AwayWin"
+    ],
+    "wasps-bristol-22/23-2": [
+        "wasps",
+        "bristol",
+        "22/23",
+        "2",
+        "AwayWin"
+    ],
+    "saracens-leicester-22/23-4": [
+        "saracens",
+        "leicester",
+        "22/23",
+        "4",
+        "HomeWin"
+    ],
+    "newcastle-bristol-22/23-4": [
+        "newcastle",
+        "bristol",
+        "22/23",
+        "4",
+        "HomeWin"
+    ],
+    "gloucester-bristol-22/23-6": [
+        "gloucester",
+        "bristol",
+        "22/23",
+        "6",
+        "HomeWin"
+    ],
+    "northampton-newcastle-22/23-6": [
+        "northampton",
+        "newcastle",
+        "22/23",
+        "6",
+        "HomeWin"
+    ],
+    "sale-london-irish-22/23-6": [
+        "sale",
+        "london-irish",
+        "22/23",
+        "6",
+        "HomeWin"
+    ],
+    "harlequins-london-irish-22/23-8": [
+        "harlequins",
+        "london-irish",
+        "22/23",
+        "8",
+        "HomeWin"
+    ],
+    "bristol-saracens-22/23-9": [
+        "bristol",
+        "saracens",
+        "22/23",
+        "9",
+        "AwayWin"
+    ],
+    "bath-leicester-22/23-10": [
+        "bath",
+        "leicester",
+        "22/23",
+        "10",
+        "HomeWin"
+    ],
+    "bristol-leicester-22/23-12": [
+        "bristol",
+        "leicester",
+        "22/23",
+        "12",
+        "Draw"
+    ],
+    "london-irish-newcastle-22/23-12": [
+        "london-irish",
+        "newcastle",
+        "22/23",
+        "12",
+        "HomeWin"
+    ],
+    "northampton-harlequins-22/23-14": [
+        "northampton",
+        "harlequins",
+        "22/23",
+        "14",
+        "HomeWin"
+    ],
+    "bath-newcastle-22/23-14": [
+        "bath",
+        "newcastle",
+        "22/23",
+        "14",
+        "HomeWin"
+    ],
+    "saracens-exeter-chiefs-22/23-14": [
+        "saracens",
+        "exeter-chiefs",
+        "22/23",
+        "14",
+        "HomeWin"
+    ],
+    "gloucester-saracens-22/23-15": [
+        "gloucester",
+        "saracens",
+        "22/23",
+        "15",
+        "AwayWin"
+    ],
+    "exeter-chiefs-gloucester-22/23-16": [
+        "exeter-chiefs",
+        "gloucester",
+        "22/23",
+        "16",
+        "HomeWin"
+    ],
+    "bath-london-irish-22/23-17": [
+        "bath",
+        "london-irish",
+        "22/23",
+        "17",
+        "AwayWin"
+    ],
+    "gloucester-harlequins-22/23-17": [
+        "gloucester",
+        "harlequins",
+        "22/23",
+        "17",
+        "AwayWin"
+    ],
+    "bristol-newcastle-22/23-17": [
+        "bristol",
+        "newcastle",
+        "22/23",
+        "17",
+        "HomeWin"
+    ],
+    "harlequins-exeter-chiefs-22/23-19": [
+        "harlequins",
+        "exeter-chiefs",
+        "22/23",
+        "19",
+        "HomeWin"
+    ],
+    "leicester-bath-22/23-19": [
+        "leicester",
+        "bath",
+        "22/23",
+        "19",
+        "HomeWin"
+    ],
+    "bristol-northampton-22/23-19": [
+        "bristol",
+        "northampton",
+        "22/23",
+        "19",
+        "HomeWin"
+    ],
+    "london-irish-northampton-22/23-21": [
+        "london-irish",
+        "northampton",
+        "22/23",
+        "21",
+        "HomeWin"
+    ],
+    "saracens-harlequins-22/23-21": [
+        "saracens",
+        "harlequins",
+        "22/23",
+        "21",
+        "HomeWin"
+    ],
+    "leicester-exeter-chiefs-22/23-22": [
+        "leicester",
+        "exeter-chiefs",
+        "22/23",
+        "22",
+        "HomeWin"
+    ],
+    "leicester-bristol-22/23-21": [
+        "leicester",
+        "bristol",
+        "22/23",
+        "21",
+        "HomeWin"
+    ],
+    "newcastle-northampton-22/23-23": [
+        "newcastle",
+        "northampton",
+        "22/23",
+        "23",
+        "AwayWin"
+    ],
+    "harlequins-bath-22/23-23": [
+        "harlequins",
+        "bath",
+        "22/23",
+        "23",
+        "AwayWin"
+    ],
+    "leicester-harlequins-22/23-24": [
+        "leicester",
+        "harlequins",
+        "22/23",
+        "24",
+        "AwayWin"
+    ],
+    "worcester-exeter-chiefs-22/23-2": [
+        "worcester",
+        "exeter-chiefs",
+        "22/23",
+        "2",
         "AwayWin"
     ]
 }
