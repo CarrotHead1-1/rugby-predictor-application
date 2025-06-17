@@ -10,10 +10,9 @@ import requests as r
 
 
 #BrightData setup 
-
-#brd-customer-hl_5939d09e-zone-dissertation_webscrapper:8m4ixpt9p4yk@brd.superproxy.io:9515
-AUTH = 'brd-customer-hl_353b4db0-zone-dissertation_webscrapper:y1xz8r818u2d'
-SBR_WEBDRIVER = f'https://{AUTH}@brd.superproxy.io:9515'
+## add personal bright data api keys 
+AUTH = ''
+SBR_WEBDRIVER = f''
 
 
 #gets webpage from the given url
@@ -158,31 +157,4 @@ def scrapeData(url):
       statsData = extractData(dataSplit)
       #print(statsData)
    return latestData, statsData
-   # if checkPage(url) == 0:
-   #    html = getWebpage(url)
-   #    content = extractHtml(html)
-   #    content = cleanHtml(html)
 
-   #    startPnt, endPnt = getLatestPageDelimeters(content)
-
-   #    matchData = content[startPnt : endPnt]
-   #    matchData = matchData.splitlines()
-
-   #    matchData = extractData(matchData)
-
-   #    strip = stripRugbyPassURL(url)
-   #    url = statsPageURL(strip)
-
-   #    if checkPage(url) == 0:
-
-
-   #stats page url from rugby pass
-   
-      #content = extractHtml(html)
-      #content = cleanHtml(content)
-      #print('success')
-      #print(content)
-
-   #split = stripRugbyPassURL('https://www.rugbypass.com/live/exeter-chiefs-vs-gloucester/?g=943614')
-   #statsURL = statsPageURL(split)
-   #print(checkPage(statsURL))
