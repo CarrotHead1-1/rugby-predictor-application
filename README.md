@@ -116,3 +116,7 @@ Rugby Union lacks accessible, standardized public datasets. As a result, a custo
    ```bash
    cd backend
    uvicorn api:app --reload
+
+### Scraping Data
+- Go to the scrapper.py file in the backend/datasetBuilder directory
+- Add personal API key from BrightData at the intended variables
